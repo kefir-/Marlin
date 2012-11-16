@@ -41,6 +41,7 @@
 // 70 = Megatronics
 // 90 = Alpha OMCA board
 // 91 = Final OMCA board
+// 92 = TechZone Monotronics board
 
 #ifndef MOTHERBOARD
 #define MOTHERBOARD 7

@@ -1062,7 +1062,7 @@
 * Monotronics support
 *
 *****************************  ***********************************************************/
-#if MOTHERBOARD == 14
+#if MOTHERBOARD == 92
 #define MOTHERBOARD 6   /*TODO: Figure out, Why is this done?*/
 #define KNOWN_BOARD 1
 #ifndef __AVR_ATmega644P__
@@ -1086,8 +1086,8 @@
 #define Z_MIN_PIN          30
 #define Z_MAX_PIN          -1
 
-#define E_STEP_PIN         12
-#define E_DIR_PIN          17
+#define E0_STEP_PIN         12
+#define E0_DIR_PIN          17
 
 #define LED_PIN            -1
 
@@ -1102,11 +1102,13 @@
 #define X_ENABLE_PIN       24 // actually uses Y_enable_pin
 #define Y_ENABLE_PIN       24 // shared with X_enable_pin
 #define Z_ENABLE_PIN       29
-#define E_ENABLE_PIN       3
+#define E0_ENABLE_PIN       3
 
 #define TEMP_0_PIN          0   // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!! (pin 33 extruder)
 #define TEMP_1_PIN          -1  // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!! (pin 34 bed)
 #define TEMP_2_PIN         -1
+#define TEMP_BED_PIN       -1
+#define HEATER_BED_PIN     -1
 #define SDPOWER            -1
 #define SDSS               -1
 #define HEATER_2_PIN       -1
@@ -1402,3 +1404,4 @@
                         _E0_PINS _E1_PINS _E2_PINS             \
                         TEMP_0_PIN, TEMP_1_PIN, TEMP_2_PIN, TEMP_BED_PIN }
 #endif
+

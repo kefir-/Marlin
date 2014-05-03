@@ -472,6 +472,7 @@ void setup()
   setup_killpin();
   setup_powerhold();
   MYSERIAL.begin(BAUDRATE);
+  analogWrite(6,155);
   SERIAL_PROTOCOLLNPGM("start");
   SERIAL_ECHO_START;
 
@@ -2034,6 +2035,12 @@ void process_commands()
         break;
       case 107: //M107 Fan Off
         fanSpeed = 0;
+        break;
+      case 108: //M2 Custom code: M108 system fan control
+        if (code_seen('S')){
+            analogWrite(6,code_value());
+            //FanSpeed1=constrain(code_value(),0,255);
+        }
         break;
     #endif //FAN_PIN
     #ifdef BARICUDA
